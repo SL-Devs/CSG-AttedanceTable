@@ -1,89 +1,230 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!-- Bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="https://www.facebook.com/STICDOCSGOfficial" class="navbar-brand">
+                <img src="/img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li> -->
+                    <li class="nav-item dropdown pe-4">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">College Time-In</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Morning Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="#">Morning Log-Out</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Afternoon Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="#">Afternoon Log-Out</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item dropdown pe-4">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Senior High Time-In</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Morning Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="#">Morning Log-Out</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Afternoon Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="#">Afternoon Log-Out</a></li>
+
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="container table-container mb-5">
+        <!-- <h2>Morning In</h2> -->
+
+        <div class="table-responsive">
+            <table id="tableStudents" class="table table-hover table-success table-bordered caption-top table-sortable">
+                <caption>
+                    Lists of College students for Morning Log-In
+                </caption>
+                <thead class="table-dark">'
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tbody1">
+
+
+                </tbody>
+            </table>
+
+
+            <div class="d-flex justify-content-center align-items center">
+                <button type="button" class="btn btn-success" onclick="tableToExcel()">Export to Excel</button>
+            </div>
+
+        </div>
+
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <script type="module">
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCuhKZnbFdVOrnrRNyOPLmJ8KsISrpIlic",
+            authDomain: "csg-attendance.firebaseapp.com",
+            databaseURL: "https://csg-attendance-default-rtdb.firebaseio.com",
+            projectId: "csg-attendance",
+            storageBucket: "csg-attendance.appspot.com",
+            messagingSenderId: "913037396545",
+            appId: "1:913037396545:web:44d0927ee7ea4ad3f7d4c0",
+            measurementId: "G-MD3YG277WR"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+        import { getDatabase, ref, child, onValue, get }
+            from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+        const db = getDatabase();
+
+
+        // COLLEGE MORNING-IN QUERY & FETCHING TABLE
+        let user_college = 0;
+        let tbody = document.getElementById('tbody1');
+
+        function addItemToTable_college(course, department, fullname, year, time) {
+            let trow = document.createElement('tr');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+            let td5 = document.createElement('td');
+            let td6 = document.createElement('td');
+            // let td7 = document.createElement('td');
+
+            // assign elements to parameters (strings)
+
+            td1.innerHTML = ++user_college;
+            td2.innerHTML = course;
+            td3.innerHTML = department;
+            td4.innerHTML = fullname;
+            td5.innerHTML = year;
+            td6.innerHTML = time;
+            // td6.innerHTML = number;
+            // td7.innerHTML = time;
+
+            // add trow on tbody
+            tbody.appendChild(trow);
+
+            // add cells to row 
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+            trow.appendChild(td6);
+            // trow.appendChild(td7);
+
         }
-      });
+
+
+        // Add all items to the table using foreach loop
+        function addAllItemsToTable_college(users_college) {
+            user_college = 0;
+            tbody.innerHTML = "";
+
+            users_college.forEach(element => {
+                addItemToTable_college(element.course, element.department, element.fullname, element.year, element.time);
+            });
+
+        }
+
+        // Getting the data realtime
+        function getAllDataRealtime_college() {
+            const dbRef = ref(db, 'COLLEGE | Morning IN');
+
+            onValue(dbRef, (snapshot) => {
+                let collegeUsers = [];
+
+                snapshot.forEach(childSnapshot => {
+                    collegeUsers.push(childSnapshot.val());
+                });
+
+                addAllItemsToTable_college(collegeUsers);
+
+            });
+
+        }
+
+        window.onload = getAllDataRealtime_college;
+
+
     </script>
-  </body>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/excelConfig.js"></script>
+    <script src="/js/table2excel.js"></script>
+
+
+</body>
+
 </html>
