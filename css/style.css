@@ -13,11 +13,16 @@
 body::before {
 	display: block;
 	content: "";
-	height: 120px;
+	height: 200px;
 }
 
-nav li {
-	padding-right: 1rem;
+.btn-excel {
+	background-color: #0072bb;
+	color: white !important;
+}
+
+.btn-excel:hover {
+	background-color: #f29f12 !important;
 }
 
 /* Table */
@@ -25,4 +30,35 @@ nav li {
 tbody td,
 th {
 	text-align: center;
+	color: white;
+}
+
+tbody td {
+	color: black;
+}
+
+.thead-color {
+	background-color: #0072bb;
+}
+
+.table-sortable th {
+	cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+	content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+	content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+	margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+	background: #f29f12;
 }
