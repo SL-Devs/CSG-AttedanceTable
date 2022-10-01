@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Morning-In</title>
+    <title>SHS | Afternoon Log-Out</title>
 
     <!-- Bootstrap -->
     <!-- CSS only -->
@@ -17,24 +17,23 @@
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="./img/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a href="https://www.facebook.com/STICDOCSGOfficial" class="navbar-brand">
-                <img src="./img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
+                <img src="../img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -50,15 +49,15 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">College Time-In</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./index.html">Morning Log-In</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Morning Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="./MorningLogOut.html">Morning Log-Out</a></li>
+                            <li><a class="dropdown-item" href="../MorningLogOut.html">Morning Log-Out</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./AfternoonLogIn.html">Afternoon Log-In</a></li>
+                            <li><a class="dropdown-item" href="../AfternoonLogIn.html">Afternoon Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="./AfternoonLogOut.html">Afternoon Log-Out</a></li>
+                            <li><a class="dropdown-item" href="../AfternoonLogOut.html">Afternoon Log-Out</a></li>
                         </ul>
 
                     </li>
@@ -67,17 +66,16 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">Senior High Time-In</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="./shs-timeIn/MorningIn.html">Morning Log-In</a></li>
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Morning Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="./shs-timeIn/MorningOut.html">Morning Log-Out</a></li>
+                            <li><a class="dropdown-item" href="./MorningOut.html">Morning Log-Out</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="./shs-timeIn/AfternoonIn.html">Afternoon Log-In</a></li>
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Afternoon Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="./shs-timeIn/AfternoonOut.html">Afternoon Log-Out</a>
+                            <li><a class="dropdown-item" href="./AfternoonOut.html">Afternoon Log-Out</a>
                             </li>
-
                         </ul>
 
                     </li>
@@ -105,7 +103,7 @@
         <div class="table-responsive hidden">
             <table id="tableStudents" class="table table-hover table-bordered caption-top table-sortable">
                 <caption>
-                    Lists of College students for Morning Log-In
+                    Lists of SHS students for Afternoon Log-Out
                 </caption>
                 <thead class="thead-color">
                     <tr>
@@ -144,6 +142,8 @@
         </div>
     </footer>
 
+
+
     <script type="module">
 
         // Import the functions you need from the SDKs you need
@@ -174,83 +174,85 @@
 
         const db = getDatabase();
 
-
-        // COLLEGE MORNING-IN QUERY & FETCHING TABLE
-        let user_college = 0;
+        // SHS MORNING-IN QUERY & FETCHING TABLE
+        let user_shs = 0;
         let tbody = document.getElementById('tbody1');
 
-        function addItemToTable_college(course, department, fullname, year, time) {
+        function addItemToTable_shs(course, department, fullname, year, time) {
             let trow = document.createElement('tr');
+            let td0 = document.createElement('td');
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
             let td3 = document.createElement('td');
             let td4 = document.createElement('td');
             let td5 = document.createElement('td');
-            let td6 = document.createElement('td');
             // let td7 = document.createElement('td');
 
             // assign elements to parameters (strings)
 
-            td1.innerHTML = ++user_college;
-            td2.innerHTML = course;
-            td3.innerHTML = department;
-            td4.innerHTML = fullname;
-            td5.innerHTML = year;
-            td6.innerHTML = time;
+            td0.innerHTML = ++user_shs;
+            td1.innerHTML = course;
+            td2.innerHTML = department;
+            td3.innerHTML = fullname;
+            td4.innerHTML = year;
+            td5.innerHTML = time;
             // td6.innerHTML = number;
-            // td7.innerHTML = time;
+            // td7.innerHTML = time; 
+
 
             // add trow on tbody
             tbody.appendChild(trow);
 
             // add cells to row 
+            trow.appendChild(td0);
             trow.appendChild(td1);
             trow.appendChild(td2);
             trow.appendChild(td3);
             trow.appendChild(td4);
             trow.appendChild(td5);
-            trow.appendChild(td6);
+
+
             // trow.appendChild(td7);
 
         }
 
-
         // Add all items to the table using foreach loop
-        function addAllItemsToTable_college(users_college) {
-            user_college = 0;
-            tbody.innerHTML = "";
+        function addAllItemsToTable_shs(Users) {
+            user_shs = 0;
+            tbody1.innerHTML = "";
 
-            users_college.forEach(element => {
-                addItemToTable_college(element.course, element.department, element.fullname, element.year, element.time);
+            Users.forEach(element => {
+                addItemToTable_shs(element.course, element.department, element.fullname, element.year, element.time);
             });
 
         }
 
         // Getting the data realtime
-        function getAllDataRealtime_college() {
-            const dbRef = ref(db, 'COLLEGE | Morning IN');
+        function getAllDataRealtime_shs() {
+            const dbRef = ref(db, 'SENIOR HIGH | Afternoon OUT');
 
             onValue(dbRef, (snapshot) => {
-                let collegeUsers = [];
+                let users = [];
 
                 snapshot.forEach(childSnapshot => {
-                    collegeUsers.push(childSnapshot.val());
+                    users.push(childSnapshot.val());
                 });
 
-                addAllItemsToTable_college(collegeUsers);
+                addAllItemsToTable_shs(users);
 
             });
 
         }
 
-        window.onload = getAllDataRealtime_college;
+
+        window.onload = getAllDataRealtime_shs;
 
 
     </script>
 
-    <script src="./js/app.js"></script>
-    <script src="./js/excelConfig.js"></script>
-    <script src="./js/table2excel.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/excelConfig.js"></script>
+    <script src="../js/table2excel.js"></script>
 
 
 </body>

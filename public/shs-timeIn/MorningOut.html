@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>SHS | Morning Log-Out</title>
 
     <!-- Bootstrap -->
     <!-- CSS only -->
@@ -18,90 +17,134 @@
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a href="https://www.facebook.com/STICDOCSGOfficial" class="navbar-brand">
+                <img src="../img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Active</a>
+                </li> -->
+                    <li class="nav-item dropdown pe-4">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">College Time-In</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../index.html">Morning Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="../MorningLogOut.html">Morning Log-Out</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="../AfternoonLogIn.html">Afternoon Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="../AfternoonLogOut.html">Afternoon Log-Out</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-item dropdown pe-4">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-expanded="false">Senior High Time-In</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Morning Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="./MorningOut.html">Morning Log-Out</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Afternoon Log-In</a></li>
+
+                            <li><a class="dropdown-item" href="./AfternoonOut.html">Afternoon Log-Out</a>
+                            </li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- Table -->
+    <div class="container table-container mb-5 hidden">
+        <!-- <h2>Morning In</h2> -->
+
+        <!-- Search bar -->
+        <div class="input-group mb-3">
+            <input type="text" id="searchBar" onkeyup="tableSearch()" class="form-control"
+                placeholder="Search a student" aria-label="Student's username" aria-describedby="button-addon2">
 
 
-    <div class="container-fluid mt-5">
-        <h2>Morning Out</h2>
+            <!-- <button id="searchBtn" class="btn btn-outline-secondary" onkeyup="tableSearch()"
+                type="button">Search</button> -->
+        </div>
 
-        <table class="Table">
-            <thead>
-                <th>No.</th>
-                <th>Course</th>
-                <th>Department</th>
-                <th>Full Name</th>
-                <th>Year</th>
-                <th>Time</th>
-            </thead>
+        <div class="table-responsive hidden">
+            <table id="tableStudents" class="table table-hover table-bordered caption-top table-sortable">
+                <caption>
+                    Lists of SHS students for Morning Log-Out
+                </caption>
+                <thead class="thead-color">
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Course</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Time</th>
+                    </tr>
+                </thead>
 
-            <tbody id="tbody1">
+                <tbody id="tbody1">
 
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
 
-        <button class="my-5" onclick="tableToExcel()">Export to Excel</button>
+
+            <div class="d-flex justify-content-center align-items center hidden">
+                <button type="button" class="btn btn-excel" onclick="tableToExcel()">Export to Excel</button>
+            </div>
+
+        </div>
 
     </div>
 
+    <!-- Footer -->
+    <footer class="hidden">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+                <p class="lead">&copy; 2022 Autodidactics. All Rights Reserved.</p>
+
+            </div>
+
+        </div>
+    </footer>
+
+
 
     <script type="module">
-
-        let userNo = 0;
-        let tbody = document.getElementById('tbody1');
-
-        function AddItemToTable(course, department, fullname, year, time) {
-            let trow = document.createElement('tr');
-            let td1 = document.createElement('td');
-            let td2 = document.createElement('td');
-            let td3 = document.createElement('td');
-            let td4 = document.createElement('td');
-            let td5 = document.createElement('td');
-            let td6 = document.createElement('td');
-            // let td7 = document.createElement('td');
-
-            // assign elements to parameters (strings)
-
-            td1.innerHTML = ++userNo;
-            td2.innerHTML = course;
-            td3.innerHTML = department;
-            td4.innerHTML = fullname;
-            td5.innerHTML = year;
-            td6.innerHTML = time;
-            // td6.innerHTML = number;
-            // td7.innerHTML = time;
-
-            // add trow on tbody
-            tbody.appendChild(trow);
-
-            // add cells to row 
-            trow.appendChild(td1);
-            trow.appendChild(td2);
-            trow.appendChild(td3);
-            trow.appendChild(td4);
-            trow.appendChild(td5);
-            trow.appendChild(td6);
-            // trow.appendChild(td7);
-
-        }
-
-        // Add all items to the table using foreach loop
-        function addAllItemsToTable(Users) {
-            userNo = 0;
-            tbody.innerHTML = "";
-
-            Users.forEach(element => {
-                AddItemToTable(element.course, element.department, element.fullname, element.year, element.time);
-            });
-
-        }
 
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
@@ -131,28 +174,61 @@
 
         const db = getDatabase();
 
+        // SHS MORNING-IN QUERY & FETCHING TABLE
+        let user_shs = 0;
+        let tbody = document.getElementById('tbody1');
 
-        // Getting the data 
-        function getAllDataOnce() {
-            const dbRef = ref(db);
+        function addItemToTable_shs(course, department, fullname, year, time) {
+            let trow = document.createElement('tr');
+            let td0 = document.createElement('td');
+            let td1 = document.createElement('td');
+            let td2 = document.createElement('td');
+            let td3 = document.createElement('td');
+            let td4 = document.createElement('td');
+            let td5 = document.createElement('td');
+            // let td7 = document.createElement('td');
 
-            get(child(dbRef, 'SENIOR HIGH | Afternoon OUT')).then((snapshot) => {
-                // array of users and forEach loop to take the snapshots
-                let users = [];
+            // assign elements to parameters (strings)
 
-                // snapshot object in an array to get all the records. 
-                // childSnapshot brings 1 value on each data from the database
-                snapshot.forEach(childSnapshot => {
-                    users.push(childSnapshot.val());
-                });
+            td0.innerHTML = ++user_shs;
+            td1.innerHTML = course;
+            td2.innerHTML = department;
+            td3.innerHTML = fullname;
+            td4.innerHTML = year;
+            td5.innerHTML = time;
+            // td6.innerHTML = number;
+            // td7.innerHTML = time; 
 
-                addAllItemsToTable(users);
 
+            // add trow on tbody
+            tbody.appendChild(trow);
+
+            // add cells to row 
+            trow.appendChild(td0);
+            trow.appendChild(td1);
+            trow.appendChild(td2);
+            trow.appendChild(td3);
+            trow.appendChild(td4);
+            trow.appendChild(td5);
+
+
+            // trow.appendChild(td7);
+
+        }
+
+        // Add all items to the table using foreach loop
+        function addAllItemsToTable_shs(Users) {
+            user_shs = 0;
+            tbody1.innerHTML = "";
+
+            Users.forEach(element => {
+                addItemToTable_shs(element.course, element.department, element.fullname, element.year, element.time);
             });
+
         }
 
         // Getting the data realtime
-        function getAllDataRealtime() {
+        function getAllDataRealtime_shs() {
             const dbRef = ref(db, 'SENIOR HIGH | Morning OUT');
 
             onValue(dbRef, (snapshot) => {
@@ -162,19 +238,22 @@
                     users.push(childSnapshot.val());
                 });
 
-                addAllItemsToTable(users);
+                addAllItemsToTable_shs(users);
 
             });
+
         }
 
 
-        window.onload = getAllDataRealtime;
+        window.onload = getAllDataRealtime_shs;
 
 
     </script>
 
-    <script src="js/excelConfig.js"></script>
-    <script src="js/table2excel.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/excelConfig.js"></script>
+    <script src="../js/table2excel.js"></script>
+
 
 </body>
 

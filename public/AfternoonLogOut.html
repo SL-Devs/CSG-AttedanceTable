@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Morning-In</title>
+    <title>College Morning-Out</title>
 
     <!-- Bootstrap -->
     <!-- CSS only -->
@@ -105,7 +105,7 @@
         <div class="table-responsive hidden">
             <table id="tableStudents" class="table table-hover table-bordered caption-top table-sortable">
                 <caption>
-                    Lists of College students for Morning Log-In
+                    Lists of College students for Afternoon Log-Out
                 </caption>
                 <thead class="thead-color">
                     <tr>
@@ -228,7 +228,7 @@
 
         // Getting the data realtime
         function getAllDataRealtime_college() {
-            const dbRef = ref(db, 'COLLEGE | Morning IN');
+            const dbRef = ref(db, 'COLLEGE | Afternoon OUT');
 
             onValue(dbRef, (snapshot) => {
                 let collegeUsers = [];

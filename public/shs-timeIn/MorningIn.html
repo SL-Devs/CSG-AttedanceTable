@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SHS | Morning Log-In</title>
 
     <!-- Bootstrap -->
     <!-- CSS only -->
@@ -17,8 +17,14 @@
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
         crossorigin="anonymous"></script>
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../img/favicon/site.webmanifest">
+
     <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -27,7 +33,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
             <a href="https://www.facebook.com/STICDOCSGOfficial" class="navbar-brand">
-                <img src="/img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
+                <img src="../img/csg-logo.png" class="img-fluid ms-4" width="90px" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -43,15 +49,15 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">College Time-In</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Morning Log-In</a></li>
+                            <li><a class="dropdown-item" href="../index.html">Morning Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="#">Morning Log-Out</a></li>
+                            <li><a class="dropdown-item" href="../MorningLogOut.html">Morning Log-Out</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Afternoon Log-In</a></li>
+                            <li><a class="dropdown-item" href="../AfternoonLogIn.html">Afternoon Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="#">Afternoon Log-Out</a></li>
+                            <li><a class="dropdown-item" href="../AfternoonLogOut.html">Afternoon Log-Out</a></li>
                         </ul>
 
                     </li>
@@ -60,16 +66,16 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                             aria-expanded="false">Senior High Time-In</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/shs-timeIn/MorningIn.html">Morning Log-In</a></li>
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Morning Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="#">Morning Log-Out</a></li>
+                            <li><a class="dropdown-item" href="./MorningOut.html">Morning Log-Out</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Afternoon Log-In</a></li>
+                            <li><a class="dropdown-item" href="./AfternoonIn.html">Afternoon Log-In</a></li>
 
-                            <li><a class="dropdown-item" href="#">Afternoon Log-Out</a></li>
-
+                            <li><a class="dropdown-item" href="./AfternoonOut.html">Afternoon Log-Out</a>
+                            </li>
                         </ul>
 
                     </li>
@@ -80,8 +86,8 @@
 
     </nav>
 
-
-    <div class="container table-container mb-5">
+    <!-- Table -->
+    <div class="container table-container mb-5 hidden">
         <!-- <h2>Morning In</h2> -->
 
         <!-- Search bar -->
@@ -94,7 +100,7 @@
                 type="button">Search</button> -->
         </div>
 
-        <div class="table-responsive">
+        <div class="table-responsive hidden">
             <table id="tableStudents" class="table table-hover table-bordered caption-top table-sortable">
                 <caption>
                     Lists of SHS students for Morning Log-In
@@ -117,13 +123,25 @@
             </table>
 
 
-            <div class="d-flex justify-content-center align-items center">
+            <div class="d-flex justify-content-center align-items center hidden">
                 <button type="button" class="btn btn-excel" onclick="tableToExcel()">Export to Excel</button>
             </div>
 
         </div>
 
     </div>
+
+    <!-- Footer -->
+    <footer class="hidden">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-center align-items-center py-3 my-4 border-top">
+                <p class="lead">&copy; 2022 Autodidactics. All Rights Reserved.</p>
+
+            </div>
+
+        </div>
+    </footer>
+
 
 
     <script type="module">
@@ -232,9 +250,9 @@
 
     </script>
 
-    <script src="/js/app.js"></script>
-    <script src="/js/excelConfig.js"></script>
-    <script src="/js/table2excel.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/excelConfig.js"></script>
+    <script src="../js/table2excel.js"></script>
 
 
 </body>
