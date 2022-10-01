@@ -102,6 +102,18 @@ footer {
 }
 
 /* Media queries */
+
+@media (max-width: 1199.98px) {
+	footer {
+		position: relative;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		/* setting the fixed height of the footer here\ */
+		height: 80px;
+	}
+}
+
 @media (max-width: 575.98px) {
 	tr th {
 		font-size: 0.7rem;
@@ -109,15 +121,5 @@ footer {
 
 	tr td {
 		font-size: 0.5rem;
-	}
-}
-
-@media (max-width: 767.98px) {
-	tr th {
-		font-size: 0.9rem;
-	}
-
-	tr td {
-		font-size: 0.7rem;
 	}
 }
