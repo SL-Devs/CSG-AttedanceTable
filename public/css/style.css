@@ -100,3 +100,24 @@ footer {
 	/* setting the fixed height of the footer here\ */
 	height: 80px;
 }
+
+/* Media queries */
+@media (max-width: 575.98px) {
+	tr th {
+		font-size: 0.7rem;
+	}
+
+	tr td {
+		font-size: 0.5rem;
+	}
+}
+
+@media (max-width: 767.98px) {
+	tr th {
+		font-size: 0.9rem;
+	}
+
+	tr td {
+		font-size: 0.7rem;
+	}
+}
