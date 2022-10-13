@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Morning-Out</title>
+    <title>College Morning-In</title>
 
     <!-- Bootstrap -->
     <!-- CSS only -->
@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
@@ -105,14 +105,14 @@
         <div class="table-responsive hidden">
             <table id="tableStudents" class="table table-hover table-bordered caption-top table-sortable">
                 <caption>
-                    Lists of College students for Afternoon Log-In
+                    Lists of College students for Morning Log-In
                 </caption>
                 <thead class="thead-color">
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">Course</th>
-                        <th scope="col">Department</th>
                         <th scope="col">Full Name</th>
+                        <th scope="col">Course</th>
+                        <!-- <th scope="col">Department</th> -->
                         <th scope="col">Year</th>
                         <th scope="col">Time</th>
                     </tr>
@@ -179,26 +179,21 @@
         let user_college = 0;
         let tbody = document.getElementById('tbody1');
 
-        function addItemToTable_college(course, department, fullname, year, time) {
+        function addItemToTable_college(fullname, course, year, time) {
             let trow = document.createElement('tr');
             let td1 = document.createElement('td');
             let td2 = document.createElement('td');
             let td3 = document.createElement('td');
             let td4 = document.createElement('td');
             let td5 = document.createElement('td');
-            let td6 = document.createElement('td');
-            // let td7 = document.createElement('td');
 
             // assign elements to parameters (strings)
 
             td1.innerHTML = ++user_college;
-            td2.innerHTML = course;
-            td3.innerHTML = department;
-            td4.innerHTML = fullname;
-            td5.innerHTML = year;
-            td6.innerHTML = time;
-            // td6.innerHTML = number;
-            // td7.innerHTML = time;
+            td2.innerHTML = fullname;
+            td3.innerHTML = year;
+            td4.innerHTML = course;
+            td5.innerHTML = time;
 
             // add trow on tbody
             tbody.appendChild(trow);
@@ -209,8 +204,6 @@
             trow.appendChild(td3);
             trow.appendChild(td4);
             trow.appendChild(td5);
-            trow.appendChild(td6);
-            // trow.appendChild(td7);
 
         }
 
@@ -221,14 +214,14 @@
             tbody.innerHTML = "";
 
             users_college.forEach(element => {
-                addItemToTable_college(element.course, element.department, element.fullname, element.year, element.time);
+                addItemToTable_college(element.fullname, element.year, element.course, element.time);
             });
 
         }
 
         // Getting the data realtime
         function getAllDataRealtime_college() {
-            const dbRef = ref(db, 'COLLEGE | Afternoon OUT');
+            const dbRef = ref(db, 'COLLEGE | Morning IN');
 
             onValue(dbRef, (snapshot) => {
                 let collegeUsers = [];

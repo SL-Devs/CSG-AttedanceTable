@@ -1,0 +1,120 @@
+*,
+::after,
+::before {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body::before {
+	display: block;
+	content: "";
+	height: 200px;
+}
+
+.btn-excel {
+	background-color: #0072bb;
+	color: white !important;
+}
+
+.btn-excel:hover {
+	background-color: #f29f12 !important;
+	font-weight: 600;
+}
+
+/* Table */
+
+tbody td,
+th {
+	text-align: center;
+	color: white;
+}
+
+tbody td {
+	color: black;
+}
+
+.thead-color {
+	background-color: #0072bb;
+}
+
+.table-sortable th {
+	cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+	content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+	content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+	margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+	background: #f29f12;
+}
+
+/* Animation */
+
+.hidden {
+	opacity: 0;
+	filter: blur(5px);
+	transition: all 1s;
+	/* transform: translate(-100%); */
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	/* transform: translate(0); */
+}
+
+/* Footer */
+
+.b-example-divider {
+	height: 3rem;
+	background-color: rgba(0, 0, 0, 0.1);
+	border: solid rgba(0, 0, 0, 0.15);
+	border-width: 1px 0;
+	box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+		inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+}
+
+footer {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	/* setting the fixed height of the footer here\ */
+	height: 80px;
+}
+
+/* Media queries */
+
+@media (max-width: 1199.98px) {
+	footer {
+		position: relative;
+	}
+}
+
+@media (max-width: 575.98px) {
+	tr th {
+		font-size: 0.7rem;
+	}
+
+	tr td {
+		font-size: 0.5rem;
+	}
+}
