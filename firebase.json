@@ -1,0 +1,15 @@
+{
+	"hosting": [
+		{
+			"target": "admin",
+			"public": "adminOnly/public",
+			"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+		},
+
+		{
+			"target": "public",
+			"public": "viewOnly/public",
+			"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+		}
+	]
+}

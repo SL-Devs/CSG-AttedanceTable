@@ -1,0 +1,18 @@
+{
+  "projects": {
+    "default": "csg-attendance"
+  },
+  "targets": {
+    "csg-attendance": {
+      "hosting": {
+        "admin": [
+          "csg-attendance"
+        ],
+        "public": [
+          "csg-attendance-viewonly"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
