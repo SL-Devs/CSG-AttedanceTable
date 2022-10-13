@@ -11,5 +11,18 @@
 			"public": "viewOnly/public",
 			"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
 		}
+	],
+
+	"rewrites": [
+		{
+			"source": "./viewOnly/public/index",
+			"destination": "./viewOnly/public/index.html"
+		}
+	],
+	"redirects": [
+		{
+			"source": "./viewOnly/public/index.html",
+			"destination": "./viewOnly/public/index"
+		}
 	]
 }
