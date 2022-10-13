@@ -15,14 +15,14 @@
 
 	"rewrites": [
 		{
-			"source": "./viewOnly/public/index",
-			"destination": "./viewOnly/public/index.html"
+			"source": "/viewOnly/public/index",
+			"destination": "/viewOnly/public/index.html"
 		}
 	],
 	"redirects": [
 		{
-			"source": "./viewOnly/public/index.html",
-			"destination": "./viewOnly/public/index"
+			"source": "/viewOnly/public/index.html",
+			"destination": "/viewOnly/public/index"
 		}
 	]
 }
