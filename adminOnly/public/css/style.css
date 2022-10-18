@@ -92,22 +92,21 @@ tbody td {
 		inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
 }
 
+/*
 footer {
 	position: absolute;
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	/* setting the fixed height of the footer here\ */
+	setting the fixed height of the footer here
 	height: 80px;
 }
+*/
 
 /* Media queries */
 
-@media (max-width: 1199.98px) {
-	footer {
-		position: relative;
-	}
-}
+/* @media (max-width: 1199.98px) {
+} */
 
 @media (max-width: 575.98px) {
 	tr th {
