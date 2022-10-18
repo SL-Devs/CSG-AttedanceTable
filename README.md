@@ -2,7 +2,7 @@
 
 ## Used in school events.
 
-### folder structure
+### folder structure for each
 
 `html files inside the /public folder are the college attendance.`
 
